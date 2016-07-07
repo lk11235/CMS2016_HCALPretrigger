@@ -44,7 +44,7 @@ config.Data.runRange        = run
 ##________________________________________________________________________________||
 
 config.section_("Site")
-config.Site.storageSite     = 'T2_CH_CERN'
-#config.Site.whitelist = ['T2_US_Caltech','T2_US_Florida', 'T2_US_MIT', 'T2_US_Nebraska', 'T2_US_Purdue', 'T2_US_UCSD', 'T2_US_Vanderbilt', 'T2_US_Wisconsin', 'T1_US_FNAL','T2_US_MIT']
+config.Site.storageSite     = 'T3_US_FNALLPC'
+#config.Site.whitelist = ['T2_CH_CERN', 'T2_US_Caltech', 'T2_US_Florida', 'T2_US_MIT', 'T2_US_Nebraska', 'T2_US_Purdue', 'T2_US_UCSD', 'T2_US_Vanderbilt', 'T2_US_Wisconsin', 'T1_US_FNAL','T2_US_MIT']
 # you may want to uncomment this line and force jobs to run in the US
 # only a few datasets (mostly very new ones) will not be accessible
