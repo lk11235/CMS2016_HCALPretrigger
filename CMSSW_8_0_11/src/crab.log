@@ -33,3 +33,40 @@ Traceback (most recent call last):
   File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/lib/python2.7/site-packages/CRABClient/CredentialInteractions.py", line 152, in createNewVomsProxySimple
     raise ProxyCreationException("Problems creating proxy.")
 ProxyCreationException: Problems creating proxy.
+DEBUG 2016-07-18 15:48:51,676: 	 Executing command: 'submit'
+DEBUG 2016-07-18 15:48:51,677: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-07-18 15:48:51,777: 	 Checking credentials
+DEBUG 2016-07-18 15:48:51,777: 	 Proxy file /tmp/x509up_u93955 not found
+DEBUG 2016-07-18 15:48:51,777: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2016-07-18 15:48:53,187: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 1
+DEBUG 2016-07-18 15:48:54,005: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 
+ error: Proxy not found: /tmp/x509up_u93955 (No such file or directory)
+
+ retcode : 1
+ERROR 2016-07-18 15:48:54,006: 	 Error while checking proxy timeleft for /tmp/x509up_u93955
+DEBUG 2016-07-18 15:48:54,621: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : 
+ error: Proxy not found: /tmp/x509up_u93955 (No such file or directory)
+
+ retcode : 1
+ERROR 2016-07-18 15:48:54,622: 	 Problems creating proxy.
+ERROR 2016-07-18 15:48:54,622: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 292, in __init__
+    self.proxyCreated = self.proxy.createNewVomsProxySimple(timeLeftThreshold = 720)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/lib/python2.7/site-packages/CRABClient/CredentialInteractions.py", line 152, in createNewVomsProxySimple
+    raise ProxyCreationException("Problems creating proxy.")
+ProxyCreationException: Problems creating proxy.

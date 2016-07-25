@@ -41,5 +41,6 @@ process.source = cms.Source ("PoolSource",
                              )
 
 readFiles.extend( [
-    "/store/data/Run2016B/JetHT/RAW/v1/000/272/760/00000/7A42AE55-D513-E611-9D36-02163E011976.root",
+    "file:/afs/cern.ch/user/l/lkang/eos/cms/store/data/Run2016B/JetHT/RAW/v1/000/272/762/00000/50F701BA-E213-E611-A459-02163E011DAA.root" 
+    #"/store/data/Run2016B/JetHT/RAW/v1/000/272/760/00000/7A42AE55-D513-E611-9D36-02163E011976.root"
     ] )
