@@ -70,3 +70,155 @@ Traceback (most recent call last):
   File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607/lib/python2.7/site-packages/CRABClient/CredentialInteractions.py", line 152, in createNewVomsProxySimple
     raise ProxyCreationException("Problems creating proxy.")
 ProxyCreationException: Problems creating proxy.
+DEBUG 2016-08-07 12:10:14,630: 	 Executing command: 'checkwrite'
+DEBUG 2016-08-07 12:10:14,631: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-07 12:10:14,638: 	 Checking credentials
+DEBUG 2016-08-07 12:10:14,639: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-07 12:10:14,639: 	 Getting proxy life time left
+DEBUG 2016-08-07 12:10:15,144: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 43109
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:15,649: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 43109
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:15,649: 	 Proxy valid for 11:58:29 hours
+DEBUG 2016-08-07 12:10:15,756: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:15,757: 	 Checking credentials
+DEBUG 2016-08-07 12:10:15,757: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-07 12:10:15,757: 	 Getting proxy life time left
+DEBUG 2016-08-07 12:10:16,261: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 43108
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:16,768: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 43108
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:16,768: 	 Proxy valid for 11:58:28 hours
+DEBUG 2016-08-07 12:10:17,274: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 12:10:17,274: 	 Command use: checkwrite
+DEBUG 2016-08-07 12:10:17,274: 	 Options use: ['--site', 'T3_US_FNALLPC']
+DEBUG 2016-08-07 12:10:17,274: 	 Instance is None
+DEBUG 2016-08-07 12:10:17,274: 	 Server base url is None
+DEBUG 2016-08-07 12:10:17,307: 	 Service initialised ({'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'key': '/tmp/x509up_u93955', 'maxcachereuse': 24.0, 'cachepath': '/tmp/lkang/.wmcore_cache_GDl9Sl/cmsweb.cern.ch', 'inputdata': {}, 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'service_name': 'PhEDEx', 'requests': {'content_type': 'application/x-www-form-urlencoded', 'cacheduration': 0, 'host': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'accept_type': 'text/html', 'key': '/tmp/x509up_u93955', 'deleteCacheOnExit': <WMCore.Services.Requests.TempDirectory instance at 0x7f393ad09d40>, 'endpoint_components': ParseResult(scheme='https', netloc='cmsweb.cern.ch', path='/phedex/datasvc/json/prod/', params='', query='', fragment=''), 'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'pycurl': True, 'cachepath': '/tmp/lkang/.wmcore_cache_GDl9Sl/cmsweb.cern.ch', 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'req_cache_path': '/tmp/lkang/.wmcore_cache_GDl9Sl/cmsweb.cern.ch/.cache', 'logger': <logging.Logger object at 0x7f393acee890>}, 'logger': <logging.Logger object at 0x7f393acee890>, 'cacheduration': 0, 'method': None, 'pycurl': True}):
+	 host: cmsweb.cern.ch, basepath: https://cmsweb.cern.ch/phedex/datasvc/json/prod/ (text/html)
+	 cache: /tmp/lkang/.wmcore_cache_GDl9Sl/cmsweb.cern.ch (duration 0 hours, max reuse 24.0 hours)
+INFO 2016-08-07 12:10:17,307: 	 Will check write permission in the default location /store/user/<username>
+INFO 2016-08-07 12:10:17,307: 	 Retrieving DN from proxy...
+INFO 2016-08-07 12:10:18,470: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+INFO 2016-08-07 12:10:18,470: 	 Retrieving username from SiteDB...
+INFO 2016-08-07 12:10:20,560: 	 Username is: lkang
+INFO 2016-08-07 12:10:20,560: 	 Validating LFN /store/user/lkang...
+INFO 2016-08-07 12:10:20,560: 	 LFN /store/user/lkang is valid.
+INFO 2016-08-07 12:10:20,593: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2016-08-07 12:10:20,593: 	 Will check write permission in /store/user/lkang on site T3_US_FNALLPC
+DEBUG 2016-08-07 12:10:20,595: 	 getData: 
+	url: lfn2pfn
+	data: {'node': ['T3_US_FNALLPC'], 'custodial': 'n', 'lfn': ['/store/user/lkang/crab3checkwrite_20160807_121020/crab3checkwrite_20160807_121020.tmp'], 'protocol': 'srmv2'}
+INFO 2016-08-07 12:10:20,959: 	 
+Attempting to create (dummy) directory crab3checkwrite_20160807_121020 and copy (dummy) file crab3checkwrite_20160807_121020.tmp to /store/user/lkang
+
+INFO 2016-08-07 12:10:20,962: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-copy -p -v -t 180 file:///afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/crab3checkwrite_20160807_121020.tmp 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/crab3checkwrite_20160807_121020.tmp'
+INFO 2016-08-07 12:10:20,963: 	 Please wait...
+INFO 2016-08-07 12:10:25,043: 	 
+Successfully created directory crab3checkwrite_20160807_121020 and copied file crab3checkwrite_20160807_121020.tmp to /store/user/lkang
+INFO 2016-08-07 12:10:25,043: 	 
+Attempting to delete file srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/crab3checkwrite_20160807_121020.tmp
+
+INFO 2016-08-07 12:10:25,043: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-rm -v -t 180 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/crab3checkwrite_20160807_121020.tmp'
+INFO 2016-08-07 12:10:25,043: 	 Please wait...
+INFO 2016-08-07 12:10:25,829: 	 
+Successfully deleted file srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/crab3checkwrite_20160807_121020.tmp
+INFO 2016-08-07 12:10:25,829: 	 
+Attempting to delete directory srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/
+
+INFO 2016-08-07 12:10:25,829: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-rm -r -v -t 180 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/'
+INFO 2016-08-07 12:10:25,830: 	 Please wait...
+INFO 2016-08-07 12:10:27,017: 	 
+Successfully deleted directory srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160807_121020/
+INFO 2016-08-07 12:10:27,171: 	 
+Checkwrite Result:
+INFO 2016-08-07 12:10:27,171: 	 Success: Able to write in /store/user/lkang on site T3_US_FNALLPC
+DEBUG 2016-08-07 17:43:26,208: 	 Executing command: 'status'
+DEBUG 2016-08-07 17:43:26,212: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-07 17:43:26,222: 	 Checking credentials
+DEBUG 2016-08-07 17:43:26,223: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-07 17:43:26,223: 	 Getting proxy life time left
+DEBUG 2016-08-07 17:43:26,927: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86069
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 17:43:27,533: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86068
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 17:43:27,533: 	 Proxy valid for 23:54:29 hours
+ERROR 2016-08-07 17:43:27,534: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272774
+ERROR 2016-08-07 17:43:27,534: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 321, in __init__
+    self.loadLocalCache(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 450, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272774
+DEBUG 2016-08-07 17:44:00,930: 	 Executing command: 'status'
+DEBUG 2016-08-07 17:44:00,930: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+ERROR 2016-08-07 17:44:00,930: 	 Error: /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272774 is not a valid CRAB project directory.
+ERROR 2016-08-07 17:44:00,931: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 257, in __init__
+    self.validateOptions()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 749, in validateOptions
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 566, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272774 is not a valid CRAB project directory.
+DEBUG 2016-08-07 17:45:03,272: 	 Executing command: 'kill'
+DEBUG 2016-08-07 17:45:03,272: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+ERROR 2016-08-07 17:45:03,273: 	 Error: Please indicate the CRAB project directory with --dir=<project-directory>.
+ERROR 2016-08-07 17:45:03,273: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 257, in __init__
+    self.validateOptions()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/kill.py", line 62, in validateOptions
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1607.patch2/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 562, in validateOptions
+    raise ex
+MissingOptionException: [91mError[0m: Please indicate the CRAB project directory with --dir=<project-directory>.

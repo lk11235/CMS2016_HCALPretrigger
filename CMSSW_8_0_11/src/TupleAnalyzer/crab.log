@@ -1,0 +1,194 @@
+DEBUG 2016-08-05 14:32:19,982: 	 Executing command: 'checkwrite'
+DEBUG 2016-08-05 14:32:19,983: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-05 14:32:20,035: 	 Checking credentials
+DEBUG 2016-08-05 14:32:20,035: 	 Proxy file /tmp/x509up_u93955 not found
+DEBUG 2016-08-05 14:32:20,035: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2016-08-05 14:32:41,795: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2016-08-05 14:32:42,305: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86398
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:42,810: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86398
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:43,316: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:43,316: 	 Proxy created.
+DEBUG 2016-08-05 14:32:43,433: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:43,433: 	 Checking credentials
+DEBUG 2016-08-05 14:32:43,433: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:32:43,433: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:32:43,937: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86397
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:44,443: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:44,443: 	 Proxy valid for 23:59:57 hours
+DEBUG 2016-08-05 14:32:45,050: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:32:45,050: 	 Command use: checkwrite
+DEBUG 2016-08-05 14:32:45,050: 	 Options use: ['--site=T2_CH_CERN']
+DEBUG 2016-08-05 14:32:45,050: 	 Instance is None
+DEBUG 2016-08-05 14:32:45,050: 	 Server base url is None
+DEBUG 2016-08-05 14:32:45,075: 	 Service initialised ({'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'key': '/tmp/x509up_u93955', 'maxcachereuse': 24.0, 'cachepath': '/tmp/lkang/.wmcore_cache_S1Wy0K/cmsweb.cern.ch', 'inputdata': {}, 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'service_name': 'PhEDEx', 'requests': {'content_type': 'application/x-www-form-urlencoded', 'cacheduration': 0, 'host': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'accept_type': 'text/html', 'key': '/tmp/x509up_u93955', 'deleteCacheOnExit': <WMCore.Services.Requests.TempDirectory instance at 0x7f70b1867cf8>, 'endpoint_components': ParseResult(scheme='https', netloc='cmsweb.cern.ch', path='/phedex/datasvc/json/prod/', params='', query='', fragment=''), 'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'pycurl': True, 'cachepath': '/tmp/lkang/.wmcore_cache_S1Wy0K/cmsweb.cern.ch', 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'req_cache_path': '/tmp/lkang/.wmcore_cache_S1Wy0K/cmsweb.cern.ch/.cache', 'logger': <logging.Logger object at 0x7f70b184c890>}, 'logger': <logging.Logger object at 0x7f70b184c890>, 'cacheduration': 0, 'method': None, 'pycurl': True}):
+	 host: cmsweb.cern.ch, basepath: https://cmsweb.cern.ch/phedex/datasvc/json/prod/ (text/html)
+	 cache: /tmp/lkang/.wmcore_cache_S1Wy0K/cmsweb.cern.ch (duration 0 hours, max reuse 24.0 hours)
+INFO 2016-08-05 14:32:45,075: 	 Will check write permission in the default location /store/user/<username>
+INFO 2016-08-05 14:32:45,075: 	 Retrieving DN from proxy...
+INFO 2016-08-05 14:32:46,317: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+INFO 2016-08-05 14:32:46,317: 	 Retrieving username from SiteDB...
+INFO 2016-08-05 14:32:48,404: 	 Username is: lkang
+INFO 2016-08-05 14:32:48,404: 	 Validating LFN /store/user/lkang...
+INFO 2016-08-05 14:32:48,404: 	 LFN /store/user/lkang is valid.
+INFO 2016-08-05 14:32:48,439: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2016-08-05 14:32:48,440: 	 Will check write permission in /store/user/lkang on site T2_CH_CERN
+DEBUG 2016-08-05 14:32:48,443: 	 getData: 
+	url: lfn2pfn
+	data: {'node': ['T2_CH_CERN'], 'custodial': 'n', 'lfn': ['/store/user/lkang/crab3checkwrite_20160805_143248/crab3checkwrite_20160805_143248.tmp'], 'protocol': 'srmv2'}
+INFO 2016-08-05 14:32:48,789: 	 
+Attempting to create (dummy) directory crab3checkwrite_20160805_143248 and copy (dummy) file crab3checkwrite_20160805_143248.tmp to /store/user/lkang
+
+INFO 2016-08-05 14:32:48,792: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-copy -p -v -t 180 file:///afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/TupleAnalyzer/crab3checkwrite_20160805_143248.tmp 'srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/user/lkang/crab3checkwrite_20160805_143248/crab3checkwrite_20160805_143248.tmp'
+INFO 2016-08-05 14:32:48,792: 	 Please wait...
+INFO 2016-08-05 14:32:49,634: 	 Failed running copy command
+INFO 2016-08-05 14:32:49,634: 	   Stdout:
+    Copying 85 bytes file:///afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/TupleAnalyzer/crab3checkwrite_20160805_143248.tmp => srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/user/lkang/crab3checkwrite_20160805_143248/crab3checkwrite_20160805_143248.tmp
+    event: [1470400369247] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+    event: [1470400369247] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/TupleAnalyzer/crab3checkwrite_20160805_143248.tmp => srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/user/lkang/crab3checkwrite_20160805_143248/crab3checkwrite_20160805_143248.tmp
+    event: [1470400369247] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+    event: [1470400369261] BOTH   SRM	PREPARE:ENTER	
+    
+INFO 2016-08-05 14:32:49,634: 	   Stderr:
+    WARNING Transfer failed with: DESTINATION MAKE_PARENT srm-ifce err: Input/output error, err: [SE][Mkdir][SRM_FAILURE] httpg://srm-eoscms.cern.ch:8443/srm/v2/server: srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/user/lkang/crab3checkwrite_20160805_143248: Error:/bin/mkdir: cannot create directory `/eos/cms/store/user/lkang': Operation not permitted
+    Ref-u lkang  /bin/mkdir /eos/cms/store/user/lkang
+    
+    gfal-copy error: 5 (Input/output error) - DESTINATION MAKE_PARENT srm-ifce err: Input/output error, err: [SE][Mkdir][SRM_FAILURE] httpg://srm-eoscms.cern.ch:8443/srm/v2/server: srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/user/lkang/crab3checkwrite_20160805_143248: Error:/bin/mkdir: cannot create directory `/eos/cms/store/user/lkang': Operation not permitted
+    Ref-u lkang  /bin/mkdir /eos/cms/store/user/lkang
+    
+    
+INFO 2016-08-05 14:32:49,717: 	 
+Checkwrite Result:
+INFO 2016-08-05 14:32:49,717: 	 Error: Unable to write in /store/user/lkang on site T2_CH_CERN
+       You may want to contact the site administrators sending them the 'crab checkwrite' output as printed above.
+INFO 2016-08-05 14:32:49,717: 	 Note: You cannot write to a site if you did not ask permission.
+DEBUG 2016-08-05 14:33:20,798: 	 Executing command: 'checkwrite'
+DEBUG 2016-08-05 14:33:20,798: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-05 14:33:20,804: 	 Checking credentials
+DEBUG 2016-08-05 14:33:20,805: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:33:20,805: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:33:21,308: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86359
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:21,814: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86359
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:21,814: 	 Proxy valid for 23:59:19 hours
+DEBUG 2016-08-05 14:33:21,921: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:21,921: 	 Checking credentials
+DEBUG 2016-08-05 14:33:21,921: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:33:21,921: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:33:22,426: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86358
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:22,930: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86358
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:22,930: 	 Proxy valid for 23:59:18 hours
+DEBUG 2016-08-05 14:33:23,435: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:33:23,436: 	 Command use: checkwrite
+DEBUG 2016-08-05 14:33:23,436: 	 Options use: ['--site=T3_US_FNALLPC']
+DEBUG 2016-08-05 14:33:23,436: 	 Instance is None
+DEBUG 2016-08-05 14:33:23,436: 	 Server base url is None
+DEBUG 2016-08-05 14:33:23,444: 	 Service initialised ({'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'key': '/tmp/x509up_u93955', 'maxcachereuse': 24.0, 'cachepath': '/tmp/lkang/.wmcore_cache_aN_AdU/cmsweb.cern.ch', 'inputdata': {}, 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'service_name': 'PhEDEx', 'requests': {'content_type': 'application/x-www-form-urlencoded', 'cacheduration': 0, 'host': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'accept_type': 'text/html', 'key': '/tmp/x509up_u93955', 'deleteCacheOnExit': <WMCore.Services.Requests.TempDirectory instance at 0x7f39c757ad40>, 'endpoint_components': ParseResult(scheme='https', netloc='cmsweb.cern.ch', path='/phedex/datasvc/json/prod/', params='', query='', fragment=''), 'endpoint': 'https://cmsweb.cern.ch/phedex/datasvc/json/prod/', 'pycurl': True, 'cachepath': '/tmp/lkang/.wmcore_cache_aN_AdU/cmsweb.cern.ch', 'cert': '/tmp/x509up_u93955', 'timeout': 300, 'req_cache_path': '/tmp/lkang/.wmcore_cache_aN_AdU/cmsweb.cern.ch/.cache', 'logger': <logging.Logger object at 0x7f39c755f8d0>}, 'logger': <logging.Logger object at 0x7f39c755f8d0>, 'cacheduration': 0, 'method': None, 'pycurl': True}):
+	 host: cmsweb.cern.ch, basepath: https://cmsweb.cern.ch/phedex/datasvc/json/prod/ (text/html)
+	 cache: /tmp/lkang/.wmcore_cache_aN_AdU/cmsweb.cern.ch (duration 0 hours, max reuse 24.0 hours)
+INFO 2016-08-05 14:33:23,444: 	 Will check write permission in the default location /store/user/<username>
+INFO 2016-08-05 14:33:23,444: 	 Retrieving DN from proxy...
+INFO 2016-08-05 14:33:24,541: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+INFO 2016-08-05 14:33:24,541: 	 Retrieving username from SiteDB...
+INFO 2016-08-05 14:33:26,532: 	 Username is: lkang
+INFO 2016-08-05 14:33:26,532: 	 Validating LFN /store/user/lkang...
+INFO 2016-08-05 14:33:26,533: 	 LFN /store/user/lkang is valid.
+INFO 2016-08-05 14:33:26,539: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2016-08-05 14:33:26,539: 	 Will check write permission in /store/user/lkang on site T3_US_FNALLPC
+DEBUG 2016-08-05 14:33:26,544: 	 getData: 
+	url: lfn2pfn
+	data: {'node': ['T3_US_FNALLPC'], 'custodial': 'n', 'lfn': ['/store/user/lkang/crab3checkwrite_20160805_143326/crab3checkwrite_20160805_143326.tmp'], 'protocol': 'srmv2'}
+INFO 2016-08-05 14:33:26,863: 	 
+Attempting to create (dummy) directory crab3checkwrite_20160805_143326 and copy (dummy) file crab3checkwrite_20160805_143326.tmp to /store/user/lkang
+
+INFO 2016-08-05 14:33:26,866: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-copy -p -v -t 180 file:///afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/TupleAnalyzer/crab3checkwrite_20160805_143326.tmp 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/crab3checkwrite_20160805_143326.tmp'
+INFO 2016-08-05 14:33:26,866: 	 Please wait...
+INFO 2016-08-05 14:33:30,779: 	 
+Successfully created directory crab3checkwrite_20160805_143326 and copied file crab3checkwrite_20160805_143326.tmp to /store/user/lkang
+INFO 2016-08-05 14:33:30,779: 	 
+Attempting to delete file srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/crab3checkwrite_20160805_143326.tmp
+
+INFO 2016-08-05 14:33:30,779: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-rm -v -t 180 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/crab3checkwrite_20160805_143326.tmp'
+INFO 2016-08-05 14:33:30,779: 	 Please wait...
+INFO 2016-08-05 14:33:31,566: 	 
+Successfully deleted file srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/crab3checkwrite_20160805_143326.tmp
+INFO 2016-08-05 14:33:31,566: 	 
+Attempting to delete directory srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/
+
+INFO 2016-08-05 14:33:31,566: 	 Executing command: env -i X509_USER_PROXY=/tmp/x509up_u93955 gfal-rm -r -v -t 180 'srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/'
+INFO 2016-08-05 14:33:31,566: 	 Please wait...
+INFO 2016-08-05 14:33:32,803: 	 
+Successfully deleted directory srm://cmseos.fnal.gov:8443/srm/v2/server?SFN=/eos/uscms/store/user/lkang/crab3checkwrite_20160805_143326/
+INFO 2016-08-05 14:33:32,886: 	 
+Checkwrite Result:
+INFO 2016-08-05 14:33:32,886: 	 Success: Able to write in /store/user/lkang on site T3_US_FNALLPC

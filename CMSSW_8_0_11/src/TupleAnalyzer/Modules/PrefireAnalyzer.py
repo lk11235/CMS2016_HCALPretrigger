@@ -16,6 +16,19 @@ class PrefireAnalyzer(Analyzer):
             self.hists["EtaPhi_%s"%pretriggerThreshold] = ROOT.TH2D("EtaPhi_%s"%pretriggerThreshold,"Eta vs Phi",20,-5.,5.,20,-3.14,3.14)
             self.hists["DeltaR_%s"%pretriggerThreshold] = ROOT.TH1D("DeltaR_%s"%pretriggerThreshold,"DeltaR",20,0.,5.)
 
+    def count(self,event):
+        indexBx0,jetEtBx0 = self.getLeadingJet(event.jetEt,event.jetBx,0)
+        indexBxM1,jetEtBxM1 = self.getLeadingJet(event.jetEt,event.jetBx,-1)
+        for ibin,jetPtThreshold in enumerate(self.jetPtThresholds):
+            if jetEtBx0 >= jetPtThreshold:
+                self.hists["dem"].Fill(ibin)
+                #for pretriggerThreshold in self.pretriggerThresholds:
+                #    if jetEtBxM1 >= pretriggerThreshold:
+                #        self.hists["num_%s"%pretriggerThreshold].Fill(ibin)
+                #        self.hists["EtaPhi_%s"%pretriggerThreshold].Fill(event.jetEta[indexBxM1],event.jetPhi[indexBxM1])
+                #        self.hists["DeltaR_%s"%pretriggerThreshold].Fill(deltaR(event.jetEta[indexBxM1],event.jetPhi[indexBxM1],event.jetEta[indexBx0],event.jetPhi[indexBx0]))
+        return True
+
     def analyze(self,event):
         indexBx0,jetEtBx0 = self.getLeadingJet(event.jetEt,event.jetBx,0)
         indexBxM1,jetEtBxM1 = self.getLeadingJet(event.jetEt,event.jetBx,-1)
@@ -36,7 +49,12 @@ class PrefireAnalyzer(Analyzer):
         drawDict["EtaPhi.pdf"] = []
         drawDict["DeltaR.pdf"] = []
         for pretriggerThreshold in self.pretriggerThresholds:
-            tempList.append(makeBinoHist(self.hists["num_%s"%pretriggerThreshold],self.hists["dem"]))
+            rateHist = makeBinoHist(self.hists["num_%s"%pretriggerThreshold],self.hists["dem"])
+	    #print self.hists["num_%s"%pretriggerThreshold]
+	    #print self.hists["dem"]
+	    #print pretriggerThreshold, ": ", rate, "\n"
+	    #self.hists["num_%s"%pretriggerThreshold], "\n", self.hists["dem"], "\n"
+	    tempList.append(rateHist)#makeBinoHist(self.hists["num_%s"%pretriggerThreshold],self.hists["dem"]))
             drawDict["EtaPhi.pdf"].append(self.hists["EtaPhi_%s"%pretriggerThreshold])
             drawDict["DeltaR.pdf"].append(self.hists["DeltaR_%s"%pretriggerThreshold])
         drawDict["PrefireRate.pdf"] = [tempList]

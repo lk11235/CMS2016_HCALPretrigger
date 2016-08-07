@@ -1,0 +1,514 @@
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+L1TRawToDigi Sequence configured for Stage-2 (2016) trigger. 
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+DEBUG 2016-08-05 14:34:32,680: 	 Executing command: 'submit'
+DEBUG 2016-08-05 14:34:32,680: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-05 14:34:32,685: 	 Checking credentials
+DEBUG 2016-08-05 14:34:32,686: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:34:32,686: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:34:33,189: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86287
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:33,693: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86287
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:33,693: 	 Proxy valid for 23:58:07 hours
+INFO 2016-08-05 14:34:33,694: 	 Will use CRAB configuration file crab_L1Tuple.py
+DEBUG 2016-08-05 14:34:33,694: 	 Loading CRAB configuration file.
+DEBUG 2016-08-05 14:34:33,696: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2016-08-05 14:34:33,862: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:33,862: 	 Checking credentials
+DEBUG 2016-08-05 14:34:33,862: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:34:33,863: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:34:34,366: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86286
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:34,870: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86286
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:34,870: 	 Proxy valid for 23:58:06 hours
+DEBUG 2016-08-05 14:34:35,374: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:35,732: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-08-05 14:34:35,839: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:35,839: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-08-05 14:34:35,839: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-05 14:34:36,344: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 192:49:28  (8.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:36,345: 	 Myproxy is valid: 694168
+DEBUG 2016-08-05 14:34:36,448: 	 Executing : 
+ command : openssl x509 -noout -in ~/.globus/usercert.pem -dates
+ output : notBefore=Jun  8 08:11:58 2016 GMT
+notAfter=Jul 13 08:11:58 2017 GMT
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:36,480: 	 Delegating a myproxy for 720:00 hours
+DEBUG 2016-08-05 14:34:36,480: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-05 14:34:48,104: 	 Executing : 
+ command : export GT_PROXY_MODE=rfc ; myproxy-init -d -n -s myproxy.cern.ch -x -R '/DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch' -x -Z '/DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch' -l 'c2aa2a38b4149a1958689f9c94f94596a2d3dfba' -t 168:00 -c 720:00
+ output : Your identity: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+Creating proxy ............................................................. Done
+Proxy Verify OK
+Your proxy is valid until: Sun Sep  4 14:34:47 2016
+A proxy valid for 720 hours (30.0 days) for user c2aa2a38b4149a1958689f9c94f94596a2d3dfba now exists on myproxy.cern.ch.
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:48,105: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-05 14:34:48,608: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 719:59:59  (30.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:34:48,609: 	 My-proxy delegated.
+DEBUG 2016-08-05 14:34:48,609: 	 Command use: submit
+DEBUG 2016-08-05 14:34:48,609: 	 Options use: ['crab_L1Tuple.py']
+DEBUG 2016-08-05 14:34:48,987: 	 CRABClient version: 3.3.1607.patch2
+DEBUG 2016-08-05 14:34:48,987: 	 Instance is prod
+DEBUG 2016-08-05 14:34:48,987: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-08-05 14:34:48,987: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-08-05 14:34:48,987: 	 Started submission
+DEBUG 2016-08-05 14:34:48,987: 	 Working on /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775
+DEBUG 2016-08-05 14:34:49,446: 	 Loading required information from the environment
+DEBUG 2016-08-05 14:34:49,446: 	 Found CMSSW_8_0_11 for slc6_amd64_gcc530 with base /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11
+DEBUG 2016-08-05 14:34:49,464: 	 UNIQUE NAME: tarUUID 7864e305-9190-49d2-b2ca-00503017f92c 
+DEBUG 2016-08-05 14:34:49,464: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'out_crab'
+config.General.requestName = 'JetHT__Run2016B-v1__RAW_272775'
+config.section_('JobType')
+config.JobType.psetName = 'makeL1Ntuple_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.section_('Data')
+config.Data.inputDataset = '/JetHT/Run2016B-v1/RAW'
+config.Data.publishDBS = 'phys03'
+config.Data.publication = True
+config.Data.unitsPerJob = 30
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'LumiBased'
+config.Data.runRange = '272775'
+config.section_('Site')
+config.Site.storageSite = 'T3_US_FNALLPC'
+
+DEBUG 2016-08-05 14:34:49,464: 	 self.config.JobType.psetName: makeL1Ntuple_cfg.py
+INFO 2016-08-05 14:34:50,179: 	 Importing CMSSW configuration makeL1Ntuple_cfg.py
+INFO 2016-08-05 14:35:07,626: 	 Finished importing CMSSW configuration makeL1Ntuple_cfg.py
+DEBUG 2016-08-05 14:35:07,626: 	 Writing CMSSW configuration to /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/inputs/PSet.py
+DEBUG 2016-08-05 14:35:11,008: 	 The following EDM output files will be collected: []
+DEBUG 2016-08-05 14:35:11,008: 	 The following TFile output files will be collected: ['L1Ntuple.root']
+DEBUG 2016-08-05 14:35:11,008: 	 The following user output files will be collected: []
+DEBUG 2016-08-05 14:35:11,008: 	 Loading required information from the environment
+DEBUG 2016-08-05 14:35:11,008: 	 Found CMSSW_8_0_11 for slc6_amd64_gcc530 with base /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11
+DEBUG 2016-08-05 14:35:11,008: 	 Making tarball in /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/inputs/7864e305-9190-49d2-b2ca-00503017f92cdefault.tgz
+DEBUG 2016-08-05 14:35:11,040: 	 Checking directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/lib
+DEBUG 2016-08-05 14:35:11,040: 	 Adding directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/lib to tarball
+DEBUG 2016-08-05 14:35:11,044: 	 Checking directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/biglib
+DEBUG 2016-08-05 14:35:11,044: 	 Adding directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/biglib to tarball
+DEBUG 2016-08-05 14:35:11,045: 	 Checking directory /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/module
+DEBUG 2016-08-05 14:35:11,845: 	 Uploading archive /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/inputs/7864e305-9190-49d2-b2ca-00503017f92cdefault.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-08-05 14:35:12,641: 	 Loading required information from the environment
+DEBUG 2016-08-05 14:35:12,659: 	 Found CMSSW_8_0_11 for slc6_amd64_gcc530 with base /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11
+DEBUG 2016-08-05 14:35:12,660: 	 Making tarball in /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/inputs/debugFiles.tgz
+DEBUG 2016-08-05 14:35:12,662: 	 Uploading archive /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/inputs/debugFiles.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-08-05 14:35:13,024: 	 Result uploading input files: 35d896358ca701d381a5c5f50c877a209871961759fecaff87bcc3534efaf939.tar.gz 
+WARNING 2016-08-05 14:35:13,025: 	 Warning: The following output files will not be published, as they are not EDM files: ['L1Ntuple.root']
+INFO 2016-08-05 14:35:13,025: 	 Sending the request to the server
+DEBUG 2016-08-05 14:35:13,025: 	 Submitting {'maxjobruntime': 1250, 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T3_US_FNALLPC', 'algoargs': 30, 'cachefilename': '35d896358ca701d381a5c5f50c877a209871961759fecaff87bcc3534efaf939.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_8_0_11', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/JetHT/Run2016B-v1/RAW', 'dryrun': 0, 'workflow': 'crab_JetHT__Run2016B-v1__RAW_272775', 'adduserfiles': [], 'jobarch': 'slc6_amd64_gcc530', 'lumis': ['1,268435455'], 'nonprodsw': 0, 'tfileoutfiles': ['L1Ntuple.root'], 'oneEventMode': 0, 'debugfilename': 'ca000ffb6f6eff7907633c002484513c3ecf6397ea0ba3eb50306f62cb1f7499.tar.gz', 'cacheurl': 'https://cmsweb.cern.ch/crabcache', 'saveoutput': 1, 'publication': 1, 'runs': ['272775'], 'totalunits': 0, 'splitalgo': 'LumiBased', 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2016-08-05 14:35:13,025: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T3_US_FNALLPC&algoargs=30&cachefilename=35d896358ca701d381a5c5f50c877a209871961759fecaff87bcc3534efaf939.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_11&primarydataset=&inputdata=%2FJetHT%2FRun2016B-v1%2FRAW&dryrun=0&workflow=crab_JetHT__Run2016B-v1__RAW_272775&jobarch=slc6_amd64_gcc530&nonprodsw=0&oneEventMode=0&debugfilename=ca000ffb6f6eff7907633c002484513c3ecf6397ea0ba3eb50306f62cb1f7499.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=1&totalunits=0&splitalgo=LumiBased&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=L1Ntuple.root&runs=272775&lumis=1%2C268435455
+DEBUG 2016-08-05 14:35:13,677: 	 Result: {'result': [{'RequestName': '160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775'}]}
+INFO 2016-08-05 14:35:13,679: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2016-08-05 14:35:13,679: 	 Task name: 160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-05 14:35:13,679: 	 Please use 'crab status' to check how the submission process proceeds.
+DEBUG 2016-08-05 14:35:13,679: 	 About to return
+INFO 2016-08-05 14:35:13,685: 	 Log file is /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/crab.log
+DEBUG 2016-08-05 14:35:34,816: 	 Executing command: 'status'
+DEBUG 2016-08-05 14:35:34,817: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-05 14:35:34,827: 	 Checking credentials
+DEBUG 2016-08-05 14:35:34,828: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:35:34,828: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:35:35,434: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86225
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:35,940: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86225
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:35,940: 	 Proxy valid for 23:57:05 hours
+DEBUG 2016-08-05 14:35:36,049: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:36,049: 	 Checking credentials
+DEBUG 2016-08-05 14:35:36,049: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-05 14:35:36,050: 	 Getting proxy life time left
+DEBUG 2016-08-05 14:35:36,554: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86224
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:37,059: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86223
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:37,060: 	 Proxy valid for 23:57:04 hours
+DEBUG 2016-08-05 14:35:37,423: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-08-05 14:35:37,531: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:37,531: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-08-05 14:35:37,531: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-05 14:35:38,038: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 719:59:10  (30.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-05 14:35:38,039: 	 Myproxy is valid: 2591950
+DEBUG 2016-08-05 14:35:38,039: 	 Command use: status
+DEBUG 2016-08-05 14:35:38,039: 	 Options use: []
+DEBUG 2016-08-05 14:35:38,385: 	 CRABClient version: 3.3.1607.patch2
+DEBUG 2016-08-05 14:35:38,385: 	 Instance is prod
+DEBUG 2016-08-05 14:35:38,385: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-08-05 14:35:38,385: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-08-05 14:35:38,385: 	 Looking up detailed status of task 160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+DEBUG 2016-08-05 14:35:38,800: 	 {'status': 'NEW', 'username': 'lkang', 'totalJobdefs': 0, 'jobsPerStatus': {}, 'taskWarningMsg': [], 'schedd': '', 'statusFailureMsg': '', 'taskFailureMsg': '', 'failedJobdefs': 0, 'command': 'SUBMIT', 'submissionTime': 1470400513, 'jobdefErrors': [], 'collector': 'cmsgwms-collector-global.cern.ch,cmssrv221.fnal.gov', 'jobList': []}
+INFO 2016-08-05 14:35:38,800: 	 CRAB project directory:		/afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-05 14:35:38,800: 	 Task name:			160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-05 14:35:38,800: 	 Task status:			NEW on command SUBMIT
+INFO 2016-08-05 14:35:38,800: 	 
+No jobs created yet!
+INFO 2016-08-05 14:35:38,802: 	 Log file is /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/crab.log
+DEBUG 2016-08-06 00:31:41,097: 	 Executing command: 'status'
+DEBUG 2016-08-06 00:31:41,101: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-06 00:31:41,144: 	 Checking credentials
+DEBUG 2016-08-06 00:31:41,144: 	 Proxy file /tmp/x509up_u93955 not found
+DEBUG 2016-08-06 00:31:41,144: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2016-08-06 00:32:16,774: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2016-08-06 00:32:17,808: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86397
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:18,521: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86395
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:19,129: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:19,129: 	 Proxy created.
+DEBUG 2016-08-06 00:32:19,275: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:19,275: 	 Checking credentials
+DEBUG 2016-08-06 00:32:19,276: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-06 00:32:19,276: 	 Getting proxy life time left
+DEBUG 2016-08-06 00:32:19,784: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86395
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:20,397: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86393
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:20,397: 	 Proxy valid for 23:59:55 hours
+DEBUG 2016-08-06 00:32:20,793: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-08-06 00:32:20,905: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:20,905: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-08-06 00:32:20,905: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-06 00:32:21,613: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 710:02:26  (29.6 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:32:21,614: 	 Myproxy is valid: 2556146
+DEBUG 2016-08-06 00:32:21,614: 	 Command use: status
+DEBUG 2016-08-06 00:32:21,614: 	 Options use: []
+DEBUG 2016-08-06 00:32:21,990: 	 CRABClient version: 3.3.1607.patch2
+DEBUG 2016-08-06 00:32:21,990: 	 Instance is prod
+DEBUG 2016-08-06 00:32:21,990: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-08-06 00:32:21,990: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-08-06 00:32:21,990: 	 Looking up detailed status of task 160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+DEBUG 2016-08-06 00:32:24,804: 	 {'status': 'SUBMITTED', 'username': 'lkang', 'jobsPerStatus': {'finished': 2, 'transferring': 5}, 'jobs': {'1': {'State': 'transferring'}, '3': {'State': 'transferring'}, '2': {'State': 'transferring'}, '5': {'State': 'transferring'}, '4': {'State': 'transferring'}, '7': {'State': 'finished'}, '6': {'State': 'finished'}}, 'publication': {}, 'taskWarningMsg': [], 'schedd': 'crab3@vocms0121.cern.ch', 'publicationFailures': {}, 'outdatasets': None, 'statusFailureMsg': '', 'taskFailureMsg': '', 'failedJobdefs': 0, 'ASOURL': 'https://cmsweb.cern.ch/couchdb2', 'command': 'SUBMIT', 'totalJobdefs': 0, 'submissionTime': 1470400513, 'jobdefErrors': [], 'collector': 'cmsgwms-collector-global.cern.ch,cmssrv221.fnal.gov', 'jobList': [['transferring', 1], ['transferring', 3], ['transferring', 2], ['transferring', 5], ['transferring', 4], ['finished', 7], ['finished', 6]]}
+INFO 2016-08-06 00:32:24,804: 	 CRAB project directory:		/afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:32:24,805: 	 Task name:			160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:32:24,805: 	 Grid scheduler:			crab3@vocms0121.cern.ch
+INFO 2016-08-06 00:32:24,805: 	 Task status:			SUBMITTED
+INFO 2016-08-06 00:32:24,805: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=lkang&table=Mains&pattern=160805_123513%3Alkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:32:24,805: 	 
+Jobs status:			finished       28.6% (2/7)
+INFO 2016-08-06 00:32:24,805: 	 				transferring   71.4% (5/7)
+INFO 2016-08-06 00:32:24,805: 	 
+No publication information available yet
+INFO 2016-08-06 00:32:24,809: 	 Log file is /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/crab.log
+DEBUG 2016-08-06 00:35:51,459: 	 Executing command: 'status'
+DEBUG 2016-08-06 00:35:51,462: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-06 00:35:51,481: 	 Checking credentials
+DEBUG 2016-08-06 00:35:51,481: 	 Proxy file /tmp/x509up_u93955 not found
+DEBUG 2016-08-06 00:35:51,481: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2016-08-06 00:36:02,813: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2016-08-06 00:36:03,419: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86398
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:03,923: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86398
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:04,529: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:04,530: 	 Proxy created.
+DEBUG 2016-08-06 00:36:04,665: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:04,666: 	 Checking credentials
+DEBUG 2016-08-06 00:36:04,666: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-06 00:36:04,666: 	 Getting proxy life time left
+DEBUG 2016-08-06 00:36:05,276: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:05,881: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:05,882: 	 Proxy valid for 23:59:56 hours
+DEBUG 2016-08-06 00:36:06,365: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-08-06 00:36:06,498: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:06,498: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-08-06 00:36:06,498: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-06 00:36:07,002: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 709:58:41  (29.6 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-06 00:36:07,003: 	 Myproxy is valid: 2555921
+DEBUG 2016-08-06 00:36:07,003: 	 Command use: status
+DEBUG 2016-08-06 00:36:07,003: 	 Options use: []
+DEBUG 2016-08-06 00:36:07,448: 	 CRABClient version: 3.3.1607.patch2
+DEBUG 2016-08-06 00:36:07,448: 	 Instance is prod
+DEBUG 2016-08-06 00:36:07,448: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-08-06 00:36:07,448: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-08-06 00:36:07,448: 	 Looking up detailed status of task 160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+DEBUG 2016-08-06 00:36:11,098: 	 {'status': 'SUBMITTED', 'username': 'lkang', 'jobsPerStatus': {'finished': 2, 'transferring': 5}, 'jobs': {'1': {'State': 'transferring'}, '3': {'State': 'transferring'}, '2': {'State': 'transferring'}, '5': {'State': 'transferring'}, '4': {'State': 'transferring'}, '7': {'State': 'finished'}, '6': {'State': 'finished'}}, 'publication': {}, 'taskWarningMsg': [], 'schedd': 'crab3@vocms0121.cern.ch', 'publicationFailures': {}, 'outdatasets': None, 'statusFailureMsg': '', 'taskFailureMsg': '', 'failedJobdefs': 0, 'ASOURL': 'https://cmsweb.cern.ch/couchdb2', 'command': 'SUBMIT', 'totalJobdefs': 0, 'submissionTime': 1470400513, 'jobdefErrors': [], 'collector': 'cmsgwms-collector-global.cern.ch,cmssrv221.fnal.gov', 'jobList': [['transferring', 1], ['transferring', 3], ['transferring', 2], ['transferring', 5], ['transferring', 4], ['finished', 7], ['finished', 6]]}
+INFO 2016-08-06 00:36:11,099: 	 CRAB project directory:		/afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:36:11,099: 	 Task name:			160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:36:11,099: 	 Grid scheduler:			crab3@vocms0121.cern.ch
+INFO 2016-08-06 00:36:11,099: 	 Task status:			SUBMITTED
+INFO 2016-08-06 00:36:11,099: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=lkang&table=Mains&pattern=160805_123513%3Alkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-06 00:36:11,099: 	 
+Jobs status:			finished       28.6% (2/7)
+INFO 2016-08-06 00:36:11,099: 	 				transferring   71.4% (5/7)
+INFO 2016-08-06 00:36:11,099: 	 
+No publication information available yet
+INFO 2016-08-06 00:36:11,103: 	 Log file is /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/crab.log
+DEBUG 2016-08-07 00:08:32,533: 	 Executing command: 'status'
+DEBUG 2016-08-07 00:08:32,534: 	 Found CRAB cache file /afs/cern.ch/user/l/lkang/.crab3
+DEBUG 2016-08-07 00:08:32,568: 	 Checking credentials
+DEBUG 2016-08-07 00:08:32,568: 	 Proxy file /tmp/x509up_u93955 not found
+DEBUG 2016-08-07 00:08:32,568: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2016-08-07 00:08:46,103: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2016-08-07 00:08:46,610: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86398
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:47,114: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86397
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:47,618: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93955 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:47,618: 	 Proxy created.
+DEBUG 2016-08-07 00:08:47,767: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:47,767: 	 Checking credentials
+DEBUG 2016-08-07 00:08:47,768: 	 Found proxy file /tmp/x509up_u93955
+DEBUG 2016-08-07 00:08:47,768: 	 Getting proxy life time left
+DEBUG 2016-08-07 00:08:48,272: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -timeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:48,776: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93955 -actimeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:48,776: 	 Proxy valid for 23:59:56 hours
+DEBUG 2016-08-07 00:08:49,161: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-08-07 00:08:49,269: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:49,269: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-08-07 00:08:49,269: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang_cmsweb.cern.ch for credential name
+DEBUG 2016-08-07 00:08:49,774: 	 Executing : 
+ command : myproxy-info -l c2aa2a38b4149a1958689f9c94f94596a2d3dfba -s myproxy.cern.ch
+ output : username: c2aa2a38b4149a1958689f9c94f94596a2d3dfba
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lkang/CN=803706/CN=Lucas Kang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 686:25:58  (28.6 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-08-07 00:08:49,775: 	 Myproxy is valid: 2471158
+DEBUG 2016-08-07 00:08:49,775: 	 Command use: status
+DEBUG 2016-08-07 00:08:49,775: 	 Options use: []
+DEBUG 2016-08-07 00:08:50,166: 	 CRABClient version: 3.3.1607.patch2
+DEBUG 2016-08-07 00:08:50,167: 	 Instance is prod
+DEBUG 2016-08-07 00:08:50,167: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-08-07 00:08:50,167: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-08-07 00:08:50,167: 	 Looking up detailed status of task 160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+DEBUG 2016-08-07 00:08:50,997: 	 {'status': 'COMPLETED', 'username': 'lkang', 'jobsPerStatus': {'finished': 7}, 'jobs': {'1': {'State': 'finished'}, '3': {'State': 'finished'}, '2': {'State': 'finished'}, '5': {'State': 'finished'}, '4': {'State': 'finished'}, '7': {'State': 'finished'}, '6': {'State': 'finished'}}, 'publication': {}, 'taskWarningMsg': [], 'schedd': 'crab3@vocms0121.cern.ch', 'publicationFailures': {}, 'outdatasets': None, 'statusFailureMsg': '', 'taskFailureMsg': '', 'failedJobdefs': 0, 'ASOURL': 'https://cmsweb.cern.ch/couchdb2', 'command': 'SUBMIT', 'totalJobdefs': 0, 'submissionTime': 1470400513, 'jobdefErrors': [], 'collector': 'cmsgwms-collector-global.cern.ch,cmssrv221.fnal.gov', 'jobList': [['finished', 1], ['finished', 3], ['finished', 2], ['finished', 5], ['finished', 4], ['finished', 7], ['finished', 6]]}
+INFO 2016-08-07 00:08:50,997: 	 CRAB project directory:		/afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-07 00:08:50,998: 	 Task name:			160805_123513:lkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-07 00:08:50,998: 	 Grid scheduler:			crab3@vocms0121.cern.ch
+INFO 2016-08-07 00:08:50,998: 	 Task status:			COMPLETED
+INFO 2016-08-07 00:08:50,998: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=lkang&table=Mains&pattern=160805_123513%3Alkang_crab_JetHT__Run2016B-v1__RAW_272775
+INFO 2016-08-07 00:08:50,998: 	 
+Jobs status:			finished      100.0% (7/7)
+INFO 2016-08-07 00:08:50,998: 	 
+No publication information available yet
+INFO 2016-08-07 00:08:51,046: 	 Log file is /afs/cern.ch/user/l/lkang/work/pretrigger/CMSSW_8_0_11/src/out_crab/crab_JetHT__Run2016B-v1__RAW_272775/crab.log
